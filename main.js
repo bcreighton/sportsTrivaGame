@@ -22,6 +22,106 @@
         No navigation of quesitons!!!
 */
 
+// Question set (data)
+const sportsQuestions = [
+    {
+        id: cuid(),
+        question: 'Who\'s the Greatest Basketball Player of All Time?',
+        a1: 'Bill Russel',
+        a2: 'Kareem Abdul-Jabar',
+        a3: 'Michael Jordan',
+        a4: 'Lebron James'
+    },
+    {
+        id: cuid(),
+        question: 'Who holds the career record for most interceptions thrown?',
+        a1: 'Tom Brady',
+        a2: 'Payton Manning',
+        a3: 'Dan Marino',
+        a4: 'Brett Farve'
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+    {
+        id: cuid(),
+        question: ,
+        a1: ,
+        a2: ,
+        a3: ,
+        a4:
+    },
+]
+
 function renderQuestion() {
     // This function is repsonsible for rendering the current question
     console.log('`renderQuestion` ran');

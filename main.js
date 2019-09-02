@@ -69,5 +69,15 @@ function finalScore() {
 function startGame() {
     // callback function
     // This function is responsible for starting and restarting the game.
-    console.log('`startGame` ran');
+    renderQuestion();
+    renderQuestionCount();
+    renderQuestionList();
+    answerSelection();
+    answerSubmission();
+    questionTracker();
+    answerChecker();
+    finalScore();
 }
+
+// when the page loads call startGame
+$(startGame);

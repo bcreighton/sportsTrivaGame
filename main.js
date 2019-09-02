@@ -22,11 +22,6 @@
         No navigation of quesitons!!!
 */
 
-function startGame() {
-    // This function is responsible for starting and restarting the game.
-    console.log('`startGame` ran');
-}
-
 function renderQuestion() {
     // This function is repsonsible for rendering the current question
     console.log('`renderQuestion` ran');
@@ -69,4 +64,10 @@ function finalScore() {
     // This function is responsible for showing the user a pass/fail result
     // and their final score.
 
+}
+
+function startGame() {
+    // callback function
+    // This function is responsible for starting and restarting the game.
+    console.log('`startGame` ran');
 }

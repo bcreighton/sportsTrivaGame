@@ -1,7 +1,5 @@
 /* User Stories
-        A user will be presented a start button and description of the game upon page load.
-
-        When start is clicked the game will start.
+        A user will be presented a start button to start the game.
 
         A question will be populated on the page.
 
@@ -11,7 +9,9 @@
 
         Upon submission the next question will be presented to the user.
 
-        The question tracker will update after each question; showing the current question # out of the total number of questions, along with updating the just answered question with green or red to provide correct or incorrect feedback for the answer that was just submitted.
+        The question tracker will update after each question
+            The current question # out of the total number of questions
+            Updating the just answered question with green or red to provide correct or incorrect feedback
 
         At the end of the game the user will be presented their final score.
             7 or less will render failure text
@@ -21,3 +21,52 @@
 
         No navigation of quesitons!!!
 */
+
+function startGame() {
+    // This function is responsible for starting and restarting the game.
+    console.log('`startGame` ran');
+}
+
+function renderQuestion() {
+    // This function is repsonsible for rendering the current question
+    console.log('`renderQuestion` ran');
+}
+
+function renderQuestionCount() {
+    // This function is responible for rendering the current question # vs total qustions
+    console.log('`renderQuestionCount` ran');
+}
+
+function renderQuestionList() {
+    // This function is responsible for rendering the total question in a list format for score tracking.
+    console.log('`renderQuestionList` ran');
+}
+
+function answerSelection() {
+    // This function is responsible for listening for the selected answer and
+    // preventing multiple selections
+    console.log('`anserSelection` ran');
+}
+
+function answerSubmission() {
+    // This function is responsible for handling the answer selection
+    console.log('`answerSubmission` ran');
+}
+
+function questionTracker() {
+    // This function is responsible for tracking the current quesiton # vs 
+    // total # of questions
+    console.log('`questionTracker` ran');
+}
+
+function answerChecker() {
+    // This function will check each questions answer upon submission
+    // This will also result in a visual representation to show correct and incorrect answers
+    console.log('`answerChecker` ran');
+}
+
+function finalScore() {
+    // This function is responsible for showing the user a pass/fail result
+    // and their final score.
+
+}

@@ -29,7 +29,7 @@ const sportsQuestions = [
         question: 'Who\'s the Greatest Basketball Player of All Time?',
         a1: 'Bill Russel',
         a2: 'Kareem Abdul-Jabar',
-        a3: 'Michael Jordan',
+        a3: 'Michael Jordan', //correct
         a4: 'Lebron James'
     },
     {
@@ -38,88 +38,72 @@ const sportsQuestions = [
         a1: 'Tom Brady',
         a2: 'Payton Manning',
         a3: 'Dan Marino',
-        a4: 'Brett Farve'
+        a4: 'Brett Farve' //correct
     },
     {
         id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
+        question: 'How many yards did the NFLs leading rusher amass during their career?',
+        a1: '14,748',
+        a2: '18,355', //correct
+        a3: '21,781',
+        a4: '17,913'
     },
     {
         id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
+        question: 'How many points did Kobe Bryant score in his final NBA game?',
+        a1: 24,
+        a2: 16,
+        a3: 60, //correct
+        a4: 81
     },
     {
         id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
+        question: 'What is the men\'s and women\'s world record in the 100m dash?',
+        a1: '9.58s / 10.49s',
+        a2: '8.97s / 10.78s',
+        a3: '9.45s / 9.97s',
+        a4: '10.49s / 11.32s '
     },
     {
         id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
+        question: 'What\'s the world record for most medals won at a single Olympic Games by an individual?',
+        a1: 6,
+        a2: 8,
+        a3: 9,
+        a4: 2
     },
     {
         id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
+        question: 'How long was the longest tennis match in history?',
+        a1: '3 hours and 18 minutes',
+        a2: '5 hours and 28 minutes',
+        a3: '13 hours and 47 minutes',
+        a4: '11 hours and 5 minutes' //correct
     },
     {
         id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
+        question: 'Which is the only American Football team to go a whole season undefeated, including the Super Bowl?',
+        a1: '1985, Chicago Bears',
+        a2: '1972, Miami Dolphins', //correct
+        a3: '2007, New England Patriots',
+        a4: '1973, Miami Dolphins'
     },
     {
         id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
+        question: 'How is soccer player Edson Arantes do Nascimento better known?',
+        a1: 'Neymar',
+        a2: 'Ronaldinho',
+        a3: 'Garrincha',
+        a4: 'Pele' //correct
     },
     {
         id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
-    },
-    {
-        id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
-    },
-    {
-        id: cuid(),
-        question: ,
-        a1: ,
-        a2: ,
-        a3: ,
-        a4:
-    },
+        question: 'Which country won the first ever soccer World Cup in 1930?',
+        a1: 'Mexico',
+        a2: 'United States',
+        a3: 'Uruguay', //correct
+        a4: 'Germany'
+    }
 ]
 
 function renderQuestion() {

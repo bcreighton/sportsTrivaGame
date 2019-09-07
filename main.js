@@ -1,3 +1,5 @@
+'use strict';
+
 /* User Stories
         A user will be presented a start button to start the game.
 
@@ -22,7 +24,7 @@
         No navigation of quesitons!!!
 */
 
-// Question set (data)
+// Question set (data model)
 const sportsQuestions = [
     {
         id: cuid(),
@@ -105,10 +107,28 @@ const sportsQuestions = [
         a4: 'Germany'
     }
 ]
+// ----------------------------END OF DATA MODEL----------------------------------
+function generateRandomQuestion(questions) {
+    /* pseudocode ----
+        Generate a random question from the passed through array
+            keep track of selected questions to prevent duplication
+    */
+    console.log('generating random question');
+
+    return `<h2>Here's a random question</h2>`;
+}
 
 function renderQuestion() {
-    // This function is repsonsible for rendering the current question
-    console.log('`renderQuestion` ran');
+    // This function is repsonsible for rendering one(1) question to the DOM
+    /* pseudocode-----
+        For one(1) random question in sportsQuestions, generate a string and h2
+            The question should be rendered as inner text
+    */
+   console.log('`renderQuestion` ran');
+   const currentQuestion = generateRandomQuestion(sportsQuestions);
+
+    // insert question into the DOM
+   $('.js-questionContainer').html(currentQuestion); 
 }
 
 function renderQuestionCount() {

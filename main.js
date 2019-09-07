@@ -107,15 +107,37 @@ const sportsQuestions = [
         a4: 'Germany'
     }
 ]
+
+// Question Tracking Array
+const choosenQuestionSet = [];
+
 // ----------------------------END OF DATA MODEL----------------------------------
+
 function generateRandomQuestion(questions) {
     /* pseudocode ----
         Generate a random question from the passed through array
             keep track of selected questions to prevent duplication
     */
     console.log('generating random question');
+    let unique = true;
+    let num = Math.floor(Math.random() * questions.length);
+    const question = questions.splice(num, 1);
+    debugger;
 
-    return `<h2>Here's a random question</h2>`;
+    // check if the current question has already been choosen and is present in the choosenQuestionSet array
+    let questionExists = choosenQuestionSet.find(q => q == question);
+    
+    if (questionExists == true) {
+        debugger;
+        generateRandomQuestion();
+        unique = false;
+        debugger;
+    } else {
+        choosenQuestionSet.push(question);
+        debugger;
+        return question;
+        debugger;
+    }
 }
 
 function renderQuestion() {
@@ -128,7 +150,7 @@ function renderQuestion() {
    const currentQuestion = generateRandomQuestion(sportsQuestions);
 
     // insert question into the DOM
-   $('.js-questionContainer').html(currentQuestion); 
+   $('.js-questionContainer').html(currentQuestion.question); 
 }
 
 function renderQuestionCount() {

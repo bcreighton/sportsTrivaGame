@@ -61,7 +61,7 @@ const sportsQuestions = [
     {
         id: cuid(),
         question: 'What is the men\'s and women\'s world record in the 100m dash?',
-        a1: '9.58s / 10.49s',
+        a1: '9.58s / 10.49s', // correct
         a2: '8.97s / 10.78s',
         a3: '9.45s / 9.97s',
         a4: '10.49s / 11.32s '
@@ -70,7 +70,7 @@ const sportsQuestions = [
         id: cuid(),
         question: 'What\'s the world record for most medals won at a single Olympic Games by an individual?',
         a1: 6,
-        a2: 8,
+        a2: 8, // correct
         a3: 9,
         a4: 2
     },
@@ -133,13 +133,22 @@ function generateRandomQuestion(questions) {
     } else {
         choosenQuestionSet.push(question);
         const questionIndex = choosenQuestionSet.findIndex(index => index == question);
-        debugger;
 
-        return choosenQuestionSet[questionIndex][0].question;
+        return choosenQuestionSet[questionIndex][0];
     }
 }
 
-function renderQuestion() {
+function generateAnswers(question) {
+    // This function is responsible for generating a form
+    // containing 4 possible answers to the current question.
+    console.log('This question\'s answers have been generated.');
+
+    for(let i = 2; i < question.length; i++) {
+
+    }
+}
+
+function renderQuestionAndAnswers() {
     // This function is repsonsible for rendering one(1) question to the DOM
     /* pseudocode-----
         For one(1) random question in sportsQuestions, generate a string and h2
@@ -147,10 +156,12 @@ function renderQuestion() {
     */
    console.log('`renderQuestion` ran');
    const currentQuestion = generateRandomQuestion(sportsQuestions);
+   const currentAnswers = generateAnswers(currentQuestion);
    debugger;
 
     // insert question into the DOM
-   $('.js-questionContainer').html(currentQuestion); 
+   $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2>`); 
+   $('.js-questionContainer').html();
 }
 
 function renderQuestionCount() {
@@ -195,7 +206,7 @@ function finalScore() {
 function startGame() {
     // callback function
     // This function is responsible for starting and restarting the game.
-    renderQuestion();
+    renderQuestionAndAnswers();
     renderQuestionCount();
     renderQuestionList();
     answerSelection();

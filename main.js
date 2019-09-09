@@ -142,10 +142,11 @@ function generateAnswers(question) {
     // This function is responsible for generating a form
     // containing 4 possible answers to the current question.
     console.log('This question\'s answers have been generated.');
+    debugger;
 
-    for(let i = 2; i < question.length; i++) {
-        console.log(question[i]);
-    }
+    const answers = Object.entries(question);
+    debugger;
+    console.log(answers);
 }
 
 function renderQuestionAndAnswers() {

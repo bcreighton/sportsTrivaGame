@@ -144,7 +144,7 @@ function generateAnswers(question) {
     console.log('This question\'s answers have been generated.');
 
     for(let i = 2; i < question.length; i++) {
-
+        console.log(question[i]);
     }
 }
 

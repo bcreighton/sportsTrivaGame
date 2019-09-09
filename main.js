@@ -135,8 +135,7 @@ function generateRandomQuestion(questions) {
     } else {
         choosenQuestionSet.push(question);
         debugger;
-        return question;
-        debugger;
+        return (choosenQuestionSet[choosenQuestionSet.length - 1]).question;
     }
 }
 

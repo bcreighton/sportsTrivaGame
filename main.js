@@ -122,20 +122,20 @@ function generateRandomQuestion(questions) {
     let unique = true;
     let num = Math.floor(Math.random() * questions.length);
     const question = questions.splice(num, 1);
-    debugger;
 
     // check if the current question has already been choosen and is present in the choosenQuestionSet array
     let questionExists = choosenQuestionSet.find(q => q == question);
     
     if (questionExists == true) {
-        debugger;
         generateRandomQuestion();
         unique = false;
-        debugger;
+
     } else {
         choosenQuestionSet.push(question);
+        const questionIndex = choosenQuestionSet.findIndex(index => index == question);
         debugger;
-        return (choosenQuestionSet[choosenQuestionSet.length - 1]).question;
+
+        return choosenQuestionSet[questionIndex][0].question;
     }
 }
 
@@ -147,9 +147,10 @@ function renderQuestion() {
     */
    console.log('`renderQuestion` ran');
    const currentQuestion = generateRandomQuestion(sportsQuestions);
+   debugger;
 
     // insert question into the DOM
-   $('.js-questionContainer').html(currentQuestion.question); 
+   $('.js-questionContainer').html(currentQuestion); 
 }
 
 function renderQuestionCount() {

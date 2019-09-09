@@ -29,50 +29,122 @@ const sportsQuestions = [
     {
         id: cuid(),
         question: 'Who\'s the Greatest Basketball Player of All Time?',
-        a1: 'Bill Russel',
-        a2: 'Kareem Abdul-Jabar',
-        a3: 'Michael Jordan', //correct
-        a4: 'Lebron James'
+        a1: {
+            a: 'Bill Russel',
+            correct: false
+        },
+        a2: {
+            a: 'Kareem Abdul-Jabar',
+            correct: false
+        },
+        a3: {
+            a: 'Michael Jordan', //correct
+            correct: true
+        },
+        a4: {
+            a: 'Lebron James',
+            correct: false
+        }
     },
     {
         id: cuid(),
         question: 'Who holds the career record for most interceptions thrown?',
-        a1: 'Tom Brady',
-        a2: 'Payton Manning',
-        a3: 'Dan Marino',
-        a4: 'Brett Farve' //correct
+        a1: {
+            a: 'Tom Brady',
+            correct: false
+        },
+        a2: {
+            a: 'Payton Manning',
+            correct: false
+        },
+        a3: {
+            a: 'Dan Marino',
+            correct: false
+        },
+        a4: {
+            a: 'Brett Farve', //correct
+            correct: true
+        }
     },
     {
         id: cuid(),
         question: 'How many yards did the NFLs leading rusher amass during their career?',
-        a1: '14,748',
-        a2: '18,355', //correct
-        a3: '21,781',
-        a4: '17,913'
+        a1: {
+            a: '14,748',
+            correct: false
+        },
+        a2: {
+            a: '18,355', //correct
+            correct: true
+        },
+        a3: {
+            a: '21,781',
+            correct: false
+        },
+        a4: {
+            a: '17,913',
+            correct: false
+        }
     },
     {
         id: cuid(),
         question: 'How many points did Kobe Bryant score in his final NBA game?',
-        a1: 24,
-        a2: 16,
-        a3: 60, //correct
-        a4: 81
+        a1: {
+            a: 24,
+            correct: false
+        },
+        a2: {
+            a: 16,
+            correct: false
+        },
+        a3: {
+            a: 60, //correct
+            correct: true
+        },
+        a4: {
+            a: 81,
+            correct: false
+        }
     },
     {
         id: cuid(),
         question: 'What is the men\'s and women\'s world record in the 100m dash?',
-        a1: '9.58s / 10.49s', // correct
-        a2: '8.97s / 10.78s',
-        a3: '9.45s / 9.97s',
-        a4: '10.49s / 11.32s '
+        a1: {
+            a: '9.58s / 10.49s', // correct
+            correct: true
+        },
+        a2: {
+            a: '8.97s / 10.78s',
+            correct: false
+        },
+        a3: {
+            a: '9.45s / 9.97s',
+            correct: false
+        },
+        a4: {
+            a: '10.49s / 11.32s 
+            correct: false
+        }
     },
     {
         id: cuid(),
         question: 'What\'s the world record for most medals won at a single Olympic Games by an individual?',
-        a1: 6,
-        a2: 8, // correct
-        a3: 9,
-        a4: 2
+        a1: {
+            a: 6,
+            correct: false
+        },
+        a2: {
+            a: 8, // correct
+            correct: true
+        },
+        a3: {
+            a: 9,
+            correct: false
+        },
+        a4: {
+            a: 2,
+            correct: false
+        }
     },
     {
         id: cuid(),

@@ -264,7 +264,10 @@ function generateAnswers(question) {
     console.log('This question\'s answers have been generated.');
     debugger;
 
-    const answers = Object.entries(question);
+    const answersObj = Object.entries(question);
+    debugger;
+    console.log(answersObj);
+    const answers = Object.entries(answersObj);
     debugger;
     console.log(answers);
 }

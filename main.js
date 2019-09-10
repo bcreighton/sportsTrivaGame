@@ -262,14 +262,21 @@ function generateAnswers(question) {
     // This function is responsible for generating a form
     // containing 4 possible answers to the current question.
     console.log('This question\'s answers have been generated.');
-    debugger;
 
     const answersObj = Object.entries(question);
-    debugger;
     console.log(answersObj);
-    const answers = Object.entries(answersObj);
-    debugger;
-    console.log(answers);
+    for (const [])
+    /* const answers = [];
+    const workableAnswers = [];
+    let currentAnswer = [];
+    for(let i = 0; i < answersObj.length; i++) {
+        if(typeof(answersObj[i][1]) == "object") {
+            currentAnswer = Object.entries(answersObj[i]);
+            answers.push(currentAnswer[1][1]);
+        }
+    }
+    console.log(answers); */
+
 }
 
 function renderQuestionAndAnswers() {
@@ -281,7 +288,6 @@ function renderQuestionAndAnswers() {
    console.log('`renderQuestion` ran');
    const currentQuestion = generateRandomQuestion(sportsQuestions);
    const currentAnswers = generateAnswers(currentQuestion);
-   debugger;
 
     // insert question into the DOM
    $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2>`); 

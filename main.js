@@ -258,25 +258,29 @@ function generateRandomQuestion(questions) {
     }
 }
 
+function generateAnsHTML(answers) {
+    console.log('Answer HTML has been generated.');
+    for(let i=0; i<answers.length; i++) {
+        answers[i] = `<input type="radio" id="${answers[i]}" name="answers" value="${answers[i]}">\r<label for="${answers[i]}">${answers[i]}</label>`;
+    }
+    answers = answers.join('');
+    console.log(answers);
+    return answers;
+}
+
 function generateAnswers(question) {
     // This function is responsible for generating a form
     // containing 4 possible answers to the current question.
     console.log('This question\'s answers have been generated.');
 
-    const answersObj = Object.entries(question);
-    console.log(answersObj);
-    for (const [])
-    /* const answers = [];
-    const workableAnswers = [];
-    let currentAnswer = [];
-    for(let i = 0; i < answersObj.length; i++) {
-        if(typeof(answersObj[i][1]) == "object") {
-            currentAnswer = Object.entries(answersObj[i]);
-            answers.push(currentAnswer[1][1]);
-        }
+    const answersObjArr = Object.entries(question);
+    const answers = [];
+    for( let i=2; i<answersObjArr.length; i++){
+        console.log(answersObjArr[i][1].a);
+        answers.push(answersObjArr[i][1].a);
     }
-    console.log(answers); */
-
+    const answersHTML = generateAnsHTML(answers);
+    return answersHTML;
 }
 
 function renderQuestionAndAnswers() {
@@ -290,8 +294,8 @@ function renderQuestionAndAnswers() {
    const currentAnswers = generateAnswers(currentQuestion);
 
     // insert question into the DOM
-   $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2>`); 
-   $('.js-questionContainer').html();
+   $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2><form><div class="answers js-answers"><p>Testing DOM</p></div></form>`);
+   $('.js-answers').html(currentAnswers);
 }
 
 function renderQuestionCount() {

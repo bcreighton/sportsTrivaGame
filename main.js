@@ -26,209 +26,210 @@
 
 // Question set (data model)
 const sportsQuestions = [
-    {
-        id: cuid(),
-        question: 'Who\'s the Greatest Basketball Player of All Time?',
-        a1: {
-            a: 'Bill Russel',
-            correct: false
+        {
+            id: cuid(),
+            question: 'Who\'s the Greatest Basketball Player of All Time?',
+            a1: {
+                a: 'Bill Russel',
+                correct: false
+            },
+            a2: {
+                a: 'Kareem Abdul-Jabar',
+                correct: false
+            },
+            a3: {
+                a: 'Michael Jordan', //correct
+                correct: true
+            },
+            a4: {
+                a: 'Lebron James',
+                correct: false
+            }
         },
-        a2: {
-            a: 'Kareem Abdul-Jabar',
-            correct: false
+        {
+            id: cuid(),
+            question: 'Who holds the career record for most interceptions thrown?',
+            a1: {
+                a: 'Tom Brady',
+                correct: false
+            },
+            a2: {
+                a: 'Payton Manning',
+                correct: false
+            },
+            a3: {
+                a: 'Dan Marino',
+                correct: false
+            },
+            a4: {
+                a: 'Brett Farve', //correct
+                correct: true
+            }
         },
-        a3: {
-            a: 'Michael Jordan', //correct
-            correct: true
+        {
+            id: cuid(),
+            question: 'How many yards did the NFLs leading rusher amass during their career?',
+            a1: {
+                a: '14,748',
+                correct: false
+            },
+            a2: {
+                a: '18,355', //correct
+                correct: true
+            },
+            a3: {
+                a: '21,781',
+                correct: false
+            },
+            a4: {
+                a: '17,913',
+                correct: false
+            }
         },
-        a4: {
-            a: 'Lebron James',
-            correct: false
+        {
+            id: cuid(),
+            question: 'How many points did Kobe Bryant score in his final NBA game?',
+            a1: {
+                a: 24,
+                correct: false
+            },
+            a2: {
+                a: 16,
+                correct: false
+            },
+            a3: {
+                a: 60, //correct
+                correct: true
+            },
+            a4: {
+                a: 81,
+                correct: false
+            }
+        },
+        {
+            id: cuid(),
+            question: 'What is the men\'s and women\'s world record in the 100m dash?',
+            a1: {
+                a: '9.58s / 10.49s', // correct
+                correct: true
+            },
+            a2: {
+                a: '8.97s / 10.78s',
+                correct: false
+            },
+            a3: {
+                a: '9.45s / 9.97s',
+                correct: false
+            },
+            a4: {
+                a: '10.49s / 11.32s', 
+                correct: false
+            }
+        },
+        {
+            id: cuid(),
+            question: 'What\'s the world record for most medals won at a single Olympic Games by an individual?',
+            a1: {
+                a: 6,
+                correct: false
+            },
+            a2: {
+                a: 8, // correct
+                correct: true
+            },
+            a3: {
+                a: 9,
+                correct: false
+            },
+            a4: {
+                a: 2,
+                correct: false
+            }
+        },
+        {
+            id: cuid(),
+            question: 'How long was the longest tennis match in history?',
+            a1: {
+                a: '3 hours and 18 minutes',
+                correct: false
+            },
+            a2: {
+                a: '5 hours and 28 minutes',
+                correct: false
+            },
+            a3: {
+                a: '13 hours and 47 minutes',
+                correct: false
+            },
+            a4: {
+                a: '11 hours and 5 minutes', //correct
+                correct: true
+            }
+        },
+        {
+            id: cuid(),
+            question: 'Which is the only American Football team to go a whole season undefeated, including the Super Bowl?',
+            a1: {
+                a: '1985, Chicago Bears',
+                correct: false
+            },
+            a2: {
+                a: '1972, Miami Dolphins', //correct
+                correct: true
+            },
+            a3: {
+                a: '2007, New England Patriots',
+                correct: false
+            },
+            a4: {
+                a: '1973, Miami Dolphins',
+                correct: false
+            }
+        },
+        {
+            id: cuid(),
+            question: 'How is soccer player Edson Arantes do Nascimento better known?',
+            a1: {
+                a: 'Neymar',
+                correct: false
+            },
+            a2: {
+                a: 'Ronaldinho',
+                correct: false
+            },
+            a3: {
+                a: 'Garrincha',
+                correct: false
+            },
+            a4: {
+                a: 'Pele', //correct
+                correct: true
+            }
+        },
+        {
+            id: cuid(),
+            question: 'Which country won the first ever soccer World Cup in 1930?',
+            a1: {
+                a: 'Mexico',
+                correct: false
+            },
+            a2: {
+                a: 'United States',
+                correct: false
+            },
+            a3: {
+                a: 'Uruguay', //correct
+                correct: true
+            },
+            a4: {
+                a: 'Germany',
+                correct: false
+            }
         }
-    },
-    {
-        id: cuid(),
-        question: 'Who holds the career record for most interceptions thrown?',
-        a1: {
-            a: 'Tom Brady',
-            correct: false
-        },
-        a2: {
-            a: 'Payton Manning',
-            correct: false
-        },
-        a3: {
-            a: 'Dan Marino',
-            correct: false
-        },
-        a4: {
-            a: 'Brett Farve', //correct
-            correct: true
-        }
-    },
-    {
-        id: cuid(),
-        question: 'How many yards did the NFLs leading rusher amass during their career?',
-        a1: {
-            a: '14,748',
-            correct: false
-        },
-        a2: {
-            a: '18,355', //correct
-            correct: true
-        },
-        a3: {
-            a: '21,781',
-            correct: false
-        },
-        a4: {
-            a: '17,913',
-            correct: false
-        }
-    },
-    {
-        id: cuid(),
-        question: 'How many points did Kobe Bryant score in his final NBA game?',
-        a1: {
-            a: 24,
-            correct: false
-        },
-        a2: {
-            a: 16,
-            correct: false
-        },
-        a3: {
-            a: 60, //correct
-            correct: true
-        },
-        a4: {
-            a: 81,
-            correct: false
-        }
-    },
-    {
-        id: cuid(),
-        question: 'What is the men\'s and women\'s world record in the 100m dash?',
-        a1: {
-            a: '9.58s / 10.49s', // correct
-            correct: true
-        },
-        a2: {
-            a: '8.97s / 10.78s',
-            correct: false
-        },
-        a3: {
-            a: '9.45s / 9.97s',
-            correct: false
-        },
-        a4: {
-            a: '10.49s / 11.32s', 
-            correct: false
-        }
-    },
-    {
-        id: cuid(),
-        question: 'What\'s the world record for most medals won at a single Olympic Games by an individual?',
-        a1: {
-            a: 6,
-            correct: false
-        },
-        a2: {
-            a: 8, // correct
-            correct: true
-        },
-        a3: {
-            a: 9,
-            correct: false
-        },
-        a4: {
-            a: 2,
-            correct: false
-        }
-    },
-    {
-        id: cuid(),
-        question: 'How long was the longest tennis match in history?',
-        a1: {
-            a: '3 hours and 18 minutes',
-            correct: false
-        },
-        a2: {
-            a: '5 hours and 28 minutes',
-            correct: false
-        },
-        a3: {
-            a: '13 hours and 47 minutes',
-            correct: false
-        },
-        a4: {
-            a: '11 hours and 5 minutes', //correct
-            correct: true
-        }
-    },
-    {
-        id: cuid(),
-        question: 'Which is the only American Football team to go a whole season undefeated, including the Super Bowl?',
-        a1: {
-            a: '1985, Chicago Bears',
-            correct: false
-        },
-        a2: {
-            a: '1972, Miami Dolphins', //correct
-            correct: true
-        },
-        a3: {
-            a: '2007, New England Patriots',
-            correct: false
-        },
-        a4: {
-            a: '1973, Miami Dolphins',
-            correct: false
-        }
-    },
-    {
-        id: cuid(),
-        question: 'How is soccer player Edson Arantes do Nascimento better known?',
-        a1: {
-            a: 'Neymar',
-            correct: false
-        },
-        a2: {
-            a: 'Ronaldinho',
-            correct: false
-        },
-        a3: {
-            a: 'Garrincha',
-            correct: false
-        },
-        a4: {
-            a: 'Pele', //correct
-            correct: true
-        }
-    },
-    {
-        id: cuid(),
-        question: 'Which country won the first ever soccer World Cup in 1930?',
-        a1: {
-            a: 'Mexico',
-            correct: false
-        },
-        a2: {
-            a: 'United States',
-            correct: false
-        },
-        a3: {
-            a: 'Uruguay', //correct
-            correct: true
-        },
-        a4: {
-            a: 'Germany',
-            correct: false
-        }
-    }
-]
+    ]
 
 // Question Tracking Array
+const totalQuestions = sportsQuestions.length;
 const choosenQuestionSet = [];
 
 // ----------------------------END OF DATA MODEL----------------------------------
@@ -264,7 +265,6 @@ function generateAnsHTML(answers) {
         answers[i] = `<input type="radio" id="${answers[i]}" name="answers" value="${answers[i]}">\r<label for="${answers[i]}">${answers[i]}</label>`;
     }
     answers = answers.join('');
-    console.log(answers);
     return answers;
 }
 
@@ -276,7 +276,6 @@ function generateAnswers(question) {
     const answersObjArr = Object.entries(question);
     const answers = [];
     for( let i=2; i<answersObjArr.length; i++){
-        console.log(answersObjArr[i][1].a);
         answers.push(answersObjArr[i][1].a);
     }
     const answersHTML = generateAnsHTML(answers);
@@ -298,9 +297,18 @@ function renderQuestionAndAnswers() {
    $('.js-answers').html(currentAnswers);
 }
 
-function renderQuestionCount() {
-    // This function is responible for rendering the current question # vs total qustions
-    console.log('`renderQuestionCount` ran');
+function renderTotalQuestions() {
+    // populate total questions in the DOM
+    console.log('Total questions rendered.')
+    $('.js-questionTracker').html(`<h3><span class="js-counter"></span>/${totalQuestions} Questions</h3>`);
+}
+
+function updateQuestionCounter() {
+    console.log('`renderQuestionCounter` ran');
+    const questionCounter = choosenQuestionSet.length;
+    // insert question count into DOM
+    $('.js-counter').html(questionCounter);
+
 }
 
 function renderQuestionList() {
@@ -341,7 +349,8 @@ function startGame() {
     // callback function
     // This function is responsible for starting and restarting the game.
     renderQuestionAndAnswers();
-    renderQuestionCount();
+    renderTotalQuestions();
+    updateQuestionCounter();
     renderQuestionList();
     answerSelection();
     answerSubmission();

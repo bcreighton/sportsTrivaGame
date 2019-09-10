@@ -122,7 +122,7 @@ const sportsQuestions = [
             correct: false
         },
         a4: {
-            a: '10.49s / 11.32s 
+            a: '10.49s / 11.32s', 
             correct: false
         }
     },
@@ -149,34 +149,82 @@ const sportsQuestions = [
     {
         id: cuid(),
         question: 'How long was the longest tennis match in history?',
-        a1: '3 hours and 18 minutes',
-        a2: '5 hours and 28 minutes',
-        a3: '13 hours and 47 minutes',
-        a4: '11 hours and 5 minutes' //correct
+        a1: {
+            a: '3 hours and 18 minutes',
+            correct: false
+        },
+        a2: {
+            a: '5 hours and 28 minutes',
+            correct: false
+        },
+        a3: {
+            a: '13 hours and 47 minutes',
+            correct: false
+        },
+        a4: {
+            a: '11 hours and 5 minutes', //correct
+            correct: true
+        }
     },
     {
         id: cuid(),
         question: 'Which is the only American Football team to go a whole season undefeated, including the Super Bowl?',
-        a1: '1985, Chicago Bears',
-        a2: '1972, Miami Dolphins', //correct
-        a3: '2007, New England Patriots',
-        a4: '1973, Miami Dolphins'
+        a1: {
+            a: '1985, Chicago Bears',
+            correct: false
+        },
+        a2: {
+            a: '1972, Miami Dolphins', //correct
+            correct: true
+        },
+        a3: {
+            a: '2007, New England Patriots',
+            correct: false
+        },
+        a4: {
+            a: '1973, Miami Dolphins',
+            correct: false
+        }
     },
     {
         id: cuid(),
         question: 'How is soccer player Edson Arantes do Nascimento better known?',
-        a1: 'Neymar',
-        a2: 'Ronaldinho',
-        a3: 'Garrincha',
-        a4: 'Pele' //correct
+        a1: {
+            a: 'Neymar',
+            correct: false
+        },
+        a2: {
+            a: 'Ronaldinho',
+            correct: false
+        },
+        a3: {
+            a: 'Garrincha',
+            correct: false
+        },
+        a4: {
+            a: 'Pele', //correct
+            correct: true
+        }
     },
     {
         id: cuid(),
         question: 'Which country won the first ever soccer World Cup in 1930?',
-        a1: 'Mexico',
-        a2: 'United States',
-        a3: 'Uruguay', //correct
-        a4: 'Germany'
+        a1: {
+            a: 'Mexico',
+            correct: false
+        },
+        a2: {
+            a: 'United States',
+            correct: false
+        },
+        a3: {
+            a: 'Uruguay', //correct
+            correct: true
+        },
+        a4: {
+            a: 'Germany',
+            correct: false
+        }
     }
 ]
 

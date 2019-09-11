@@ -25,6 +25,7 @@
 */
 
 // Question set (data model)
+console.log('reading data');
 const sportsQuestions = [
         {
             id: cuid(),
@@ -231,6 +232,7 @@ const sportsQuestions = [
 // Question Tracking Array
 const totalQuestions = sportsQuestions.length;
 const choosenQuestionSet = [];
+console.log('render')
 
 // ----------------------------END OF DATA MODEL----------------------------------
 
@@ -243,7 +245,7 @@ function generateRandomQuestion(questions) {
     let unique = true;
     let num = Math.floor(Math.random() * questions.length);
     const question = questions.splice(num, 1);
-
+  
     // check if the current question has already been choosen and is present in the choosenQuestionSet array
     let questionExists = choosenQuestionSet.find(q => q == question);
     
@@ -254,7 +256,6 @@ function generateRandomQuestion(questions) {
     } else {
         choosenQuestionSet.push(question);
         const questionIndex = choosenQuestionSet.findIndex(index => index == question);
-
         return choosenQuestionSet[questionIndex][0];
     }
 }
@@ -293,7 +294,7 @@ function renderQuestionAndAnswers() {
    const currentAnswers = generateAnswers(currentQuestion);
 
     // insert question into the DOM
-   $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2><form><div class="answers js-answers"><p>Testing DOM</p></div></form>`);
+   $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2><form id="js-answerSubmit"><div class="answers js-answers"><p>Testing DOM</p></div><button type="submit">Submit Answer</button></form>`);
    $('.js-answers').html(currentAnswers);
 }
 
@@ -325,6 +326,12 @@ function answerSelection() {
 function answerSubmission() {
     // This function is responsible for handling the answer selection
     console.log('`answerSubmission` ran');
+    $('#js-answerSubmit').submit(event => {
+        event.preventDefault();
+        //answerChecker();
+        renderQuestionAndAnswers();
+        updateQuestionCounter();
+    });
 }
 
 function questionTracker() {
@@ -346,17 +353,16 @@ function finalScore() {
 }
 
 function startGame() {
+    console.log('startGame');
     // callback function
     // This function is responsible for starting and restarting the game.
     renderQuestionAndAnswers();
-    renderTotalQuestions();
-    updateQuestionCounter();
-    renderQuestionList();
-    answerSelection();
-    answerSubmission();
-    questionTracker();
-    answerChecker();
-    finalScore();
+    //renderTotalQuestions();
+    //updateQuestionCounter();
+    //renderQuestionList();
+    //answerSelection();
+    //questionTracker();
+    //finalScore();
 }
 
 // when the page loads call startGame

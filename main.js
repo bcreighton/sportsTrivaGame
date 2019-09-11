@@ -310,9 +310,24 @@ function updateQuestionCounter() {
 
 }
 
+function questionListHTML() {
+    const questionListItems = [];
+    for(let i = 1; i <= totalQuestions; i++) {
+        questionListItems.push(`<li class="questionListItem">Question ${i}</li>`);
+    }
+    const questionListItemsString = questionListItems.join('');
+    
+    const questionListString = `<ul class='questionList'>${questionListItemsString}</ul>\r`;
+    
+    return questionListString;
+}
+
 function renderQuestionList() {
     // This function is responsible for rendering the total question in a list format for score tracking.
     console.log('`renderQuestionList` ran');
+    const questionListStringHTML = questionListHTML();
+
+    $('.js-questionTracker').append(questionListStringHTML);
 }
 
 function answerSelection() {
@@ -358,7 +373,7 @@ function startGame() {
     renderTotalQuestions();
     updateQuestionCounter();
     answerSubmission();
-    //renderQuestionList();
+    renderQuestionList();
     //answerSelection();
     //questionTracker();
     //finalScore();

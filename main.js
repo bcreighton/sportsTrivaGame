@@ -334,6 +334,9 @@ function answerSelection() {
     // This function is responsible for listening for the selected answer and
     // preventing multiple selections
     console.log('`anserSelection` ran');
+
+
+
 }
 
 function answerSubmission() {
@@ -341,9 +344,14 @@ function answerSubmission() {
     console.log('`answerSubmission` ran');
     $('section').on('click', 'button', function(event) {
         event.preventDefault();
+        if($('input[name="answer"]:checked').length == 0){
+            alert('Please select an answer');
+            return false;
+        } else {
         //answerChecker();
         renderQuestionAndAnswers();
         updateQuestionCounter();
+        }
     });
 }
 

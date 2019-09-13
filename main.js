@@ -370,7 +370,8 @@ function answerChecker(answer) {
     // This will also result in a visual representation to show correct and incorrect answers
     console.log('`answerChecker` ran');
     const selectedQuestion = choosenQuestionSet[choosenQuestionSet.length - 1];
-    console.log(selectedQuestion);
+    const selectedQuestionArr = Object.entries(selectedQuestion);
+    console.log(selectedQuestionArr);
 }
 
 function finalScore() {

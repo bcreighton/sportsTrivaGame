@@ -352,26 +352,40 @@ function answerSubmission() {
         } else {
             const selected = $('input[type="radio"][name="answers"]:checked');
             const submittedAnswer = answerSelection(selected);
-            answerChecker(submittedAnswer);
+            const gradeResult = answerChecker(submittedAnswer);
+            questionTracker(gradeResult);
             renderQuestionAndAnswers();
             updateQuestionCounter();
         }
     });
 }
 
-function questionTracker() {
+function questionTracker(result) {
     // This function is responsible for tracking the current quesiton # vs 
     // total # of questions
     console.log('`questionTracker` ran');
+
+    if (result === true) {
+        console.log('answered question correctly.');
+    } else {
+        console.log('answered question incorrectly.');
+    }
+
 }
 
 function answerChecker(answer) {
     // This function will check each question's answer upon submission
     // This will also result in a visual representation to show correct and incorrect answers
     console.log('`answerChecker` ran');
-    const selectedQuestion = choosenQuestionSet[choosenQuestionSet.length - 1];
-    const selectedQuestionArr = Object.entries(selectedQuestion);
-    console.log(selectedQuestionArr);
+    const numQuestions = choosenQuestionSet.length;
+    const selectedQuestion = choosenQuestionSet[numQuestions - 1];
+    debugger;
+    const correctAnswer = selectedQuestion[0]["a1"]["a"];
+    if (answer === correctAnswer) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function finalScore() {

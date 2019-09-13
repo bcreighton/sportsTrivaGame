@@ -30,16 +30,16 @@ const sportsQuestions = [
             id: cuid(),
             question: 'Who\'s the Greatest Basketball Player of All Time?',
             a1: {
-                a: 'Bill Russel',
-                correct: false
+                a: 'Michael Jordan', //correct
+                correct: true
             },
             a2: {
                 a: 'Kareem Abdul-Jabar',
                 correct: false
             },
             a3: {
-                a: 'Michael Jordan', //correct
-                correct: true
+                a: 'Bill Russel',
+                correct: false
             },
             a4: {
                 a: 'Lebron James',
@@ -50,8 +50,8 @@ const sportsQuestions = [
             id: cuid(),
             question: 'Who holds the career record for most interceptions thrown?',
             a1: {
-                a: 'Tom Brady',
-                correct: false
+                a: 'Brett Farve', //correct
+                correct: true
             },
             a2: {
                 a: 'Payton Manning',
@@ -62,20 +62,20 @@ const sportsQuestions = [
                 correct: false
             },
             a4: {
-                a: 'Brett Farve', //correct
-                correct: true
+                a: 'Tom Brady',
+                correct: false
             }
         },
         {
             id: cuid(),
             question: 'How many yards did the NFLs leading rusher amass during their career?',
             a1: {
-                a: '14,748',
-                correct: false
-            },
-            a2: {
                 a: '18,355', //correct
                 correct: true
+            },
+            a2: {
+                a: '14,748',
+                correct: false
             },
             a3: {
                 a: '21,781',
@@ -90,16 +90,16 @@ const sportsQuestions = [
             id: cuid(),
             question: 'How many points did Kobe Bryant score in his final NBA game?',
             a1: {
-                a: 24,
-                correct: false
+                a: 60, //correct
+                correct: true
             },
             a2: {
                 a: 16,
                 correct: false
             },
             a3: {
-                a: 60, //correct
-                correct: true
+                a: 24,
+                correct: false
             },
             a4: {
                 a: 81,
@@ -130,12 +130,12 @@ const sportsQuestions = [
             id: cuid(),
             question: 'What\'s the world record for most medals won at a single Olympic Games by an individual?',
             a1: {
-                a: 6,
-                correct: false
-            },
-            a2: {
                 a: 8, // correct
                 correct: true
+            },
+            a2: {
+                a: 6,
+                correct: false
             },
             a3: {
                 a: 9,
@@ -150,8 +150,8 @@ const sportsQuestions = [
             id: cuid(),
             question: 'How long was the longest tennis match in history?',
             a1: {
-                a: '3 hours and 18 minutes',
-                correct: false
+                a: '11 hours and 5 minutes', //correct
+                correct: true
             },
             a2: {
                 a: '5 hours and 28 minutes',
@@ -162,20 +162,20 @@ const sportsQuestions = [
                 correct: false
             },
             a4: {
-                a: '11 hours and 5 minutes', //correct
-                correct: true
+                a: '3 hours and 18 minutes',
+                correct: false
             }
         },
         {
             id: cuid(),
             question: 'Which is the only American Football team to go a whole season undefeated, including the Super Bowl?',
             a1: {
-                a: '1985, Chicago Bears',
-                correct: false
-            },
-            a2: {
                 a: '1972, Miami Dolphins', //correct
                 correct: true
+            },
+            a2: {
+                a: '1985, Chicago Bears',
+                correct: false
             },
             a3: {
                 a: '2007, New England Patriots',
@@ -190,8 +190,8 @@ const sportsQuestions = [
             id: cuid(),
             question: 'How is soccer player Edson Arantes do Nascimento better known?',
             a1: {
-                a: 'Neymar',
-                correct: false
+                a: 'Pele', //correct
+                correct: true
             },
             a2: {
                 a: 'Ronaldinho',
@@ -202,24 +202,24 @@ const sportsQuestions = [
                 correct: false
             },
             a4: {
-                a: 'Pele', //correct
-                correct: true
+                a: 'Neymar',
+                correct: false
             }
         },
         {
             id: cuid(),
             question: 'Which country won the first ever soccer World Cup in 1930?',
             a1: {
-                a: 'Mexico',
-                correct: false
+                a: 'Uruguay', //correct
+                correct: true
             },
             a2: {
                 a: 'United States',
                 correct: false
             },
             a3: {
-                a: 'Uruguay', //correct
-                correct: true
+                a: 'Mexico',
+                correct: false
             },
             a4: {
                 a: 'Germany',

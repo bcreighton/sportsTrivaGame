@@ -352,7 +352,7 @@ function answerSubmission() {
         } else {
             const selected = $('input[type="radio"][name="answers"]:checked');
             const submittedAnswer = answerSelection(selected);
-            //answerChecker(submittedAnswer);
+            answerChecker(submittedAnswer);
             renderQuestionAndAnswers();
             updateQuestionCounter();
         }
@@ -370,6 +370,7 @@ function answerChecker(answer) {
     // This will also result in a visual representation to show correct and incorrect answers
     console.log('`answerChecker` ran');
     const selectedQuestion = choosenQuestionSet[choosenQuestionSet.length - 1];
+    console.log(selectedQuestion);
 }
 
 function finalScore() {

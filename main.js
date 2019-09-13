@@ -330,27 +330,31 @@ function renderQuestionList() {
     $('.js-questionTracker').append(questionListStringHTML);
 }
 
-function answerSelection() {
+function answerSelection(selectedAnswer) {
     // This function is responsible for listening for the selected answer and
     // preventing multiple selections
-    console.log('`anserSelection` ran');
-
-
-
+    console.log('`answerSelection` ran');
+    console.log(selectedAnswer.val());
+    return selectedAnswer.val();
 }
 
 function answerSubmission() {
     // This function is responsible for handling the answer selection
     console.log('`answerSubmission` ran');
+
     $('section').on('click', 'button', function(event) {
         event.preventDefault();
-        if($('input[name="answer"]:checked').length == 0){
+
+        // validation that an answer has been selected.
+        if($('input[name="answers"]:checked').length === 0){
             alert('Please select an answer');
             return false;
         } else {
-        //answerChecker();
-        renderQuestionAndAnswers();
-        updateQuestionCounter();
+            const selected = $('input[type="radio"][name="answers"]:checked');
+            const submittedAnswer = answerSelection(selected);
+            //answerChecker(submittedAnswer);
+            renderQuestionAndAnswers();
+            updateQuestionCounter();
         }
     });
 }
@@ -361,10 +365,11 @@ function questionTracker() {
     console.log('`questionTracker` ran');
 }
 
-function answerChecker() {
-    // This function will check each questions answer upon submission
+function answerChecker(answer) {
+    // This function will check each question's answer upon submission
     // This will also result in a visual representation to show correct and incorrect answers
     console.log('`answerChecker` ran');
+    const selectedQuestion = choosenQuestionSet[choosenQuestionSet.length - 1];
 }
 
 function finalScore() {

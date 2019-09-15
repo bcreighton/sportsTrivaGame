@@ -313,7 +313,7 @@ function updateQuestionCounter() {
 function questionListHTML() {
     const questionListItems = [];
     for(let i = 1; i <= totalQuestions; i++) {
-        questionListItems.push(`<li class="questionListItem">Question ${i}</li>`);
+        questionListItems.push(`<li id="js-q${i}" class="questionListItem">Question ${i}</li>`);
     }
     const questionListItemsString = questionListItems.join('');
     
@@ -382,9 +382,9 @@ function answerChecker(answer) {
     debugger;
     const correctAnswer = selectedQuestion[0]["a1"]["a"];
     if (answer === correctAnswer) {
-        return true;
+        $(`#js-q${numQuestions}`).addClass('correct');
     } else {
-        return false;
+        $(`#js-q${numQuestions}`).addClass('incorrect');
     }
 }
 

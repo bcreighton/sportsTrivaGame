@@ -113,3 +113,12 @@ footer {
     padding-top: 10px;
 }
 
+/* Some final css */
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}

@@ -336,7 +336,7 @@ function answerSelection(selectedAnswer) {
     console.log('`answerSelection` ran');
     console.log(selectedAnswer.val());
     return selectedAnswer.val();
-}
+}//test
 
 function answerSubmission() {
     // This function is responsible for handling the answer selection

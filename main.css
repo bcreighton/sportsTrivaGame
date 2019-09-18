@@ -113,10 +113,19 @@ footer {
     padding-top: 10px;
 }
 
+<<<<<<< HEAD
+=======
+/* Some final css */
+
+>>>>>>> fe8f224debc54ec551613e2addf97a354ea37605
 .correct {
     background-color: green;
 }
 
 .incorrect {
     background-color: red;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fe8f224debc54ec551613e2addf97a354ea37605

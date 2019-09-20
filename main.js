@@ -330,19 +330,31 @@ function renderQuestionList() {
     $('.js-questionTracker').append(questionListStringHTML);
 }
 
+function getCorrectAnswer() {
+    const numQuestions = choosenQuestionSet.length;
+    const selectedQuestion = choosenQuestionSet[numQuestions - 1];
+    const correctAnswer = selectedQuestion[0]["a1"]["a"];
+
+    return {
+        answer: correctAnswer,
+        length: numQuestions
+    }
+}
+
 function answerSelection(selectedAnswer) {
     // This function is responsible for listening for the selected answer and
     // preventing multiple selections
     console.log('`answerSelection` ran');
     console.log(selectedAnswer.val());
     return selectedAnswer.val();
-}//test
+}
 
 function answerSubmission() {
     // This function is responsible for handling the answer selection
     console.log('`answerSubmission` ran');
 
     $('section').on('click', 'button', function(event) {
+        debugger;
         event.preventDefault();
 
         // validation that an answer has been selected.
@@ -353,39 +365,66 @@ function answerSubmission() {
             const selected = $('input[type="radio"][name="answers"]:checked');
             const submittedAnswer = answerSelection(selected);
             const gradeResult = answerChecker(submittedAnswer);
-            questionTracker(gradeResult);
+            
+            answerFeedback(gradeResult);
+            
             renderQuestionAndAnswers();
             updateQuestionCounter();
         }
     });
 }
 
-function questionTracker(result) {
+function answerFeedback(result) {
     // This function is responsible for tracking the current quesiton # vs 
     // total # of questions
     console.log('`questionTracker` ran');
+    
+    let answer = getCorrectAnswer()['answer'];
+
+    let popup = '<div class="answerPopup"><div class="answerFeedback">';
 
     if (result === true) {
+        /* popup += '<h1 class="answerFeedbackTitle">Great Job!!<p class="correctAnswer">You\'ve selected the correct answer.</p>';
+        popup += '</div></div>';
+        document.body.innerHTML += (popup);
+        $('.answerPopup').css('display','block'); */
         console.log('answered question correctly.');
     } else {
+        /* popup += `<h1 class="answerFeedbackTitle">Incorrect!!<p class="correctAnswer">The correct answer to this question is: ${answer}</p>`;
+        popup += '</div></div>';
+        document.body.innerHTML += (popup);
+        $('.answerPopup').css('display','block'); */
         console.log('answered question incorrectly.');
     }
-
 }
 
 function answerChecker(answer) {
     // This function will check each question's answer upon submission
     // This will also result in a visual representation to show correct and incorrect answers
     console.log('`answerChecker` ran');
-    const numQuestions = choosenQuestionSet.length;
-    const selectedQuestion = choosenQuestionSet[numQuestions - 1];
-    debugger;
-    const correctAnswer = selectedQuestion[0]["a1"]["a"];
+    let correctAnswer = getCorrectAnswer()['answer'];
+    let numQuestions = getCorrectAnswer()['length'];
+    
     if (answer === correctAnswer) {
         $(`#js-q${numQuestions}`).addClass('correct');
+        return true;
     } else {
         $(`#js-q${numQuestions}`).addClass('incorrect');
+        return false;
     }
+}
+
+function closeAnswerFeedback() {
+    $('body').on('mouseup', '.answerPopup', function(e) {
+
+        let container = $('.answerFeedback');
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0) 
+        {
+            $('.answerPopup').remove();
+        }
+    });
 }
 
 function finalScore() {
@@ -398,6 +437,7 @@ function startGame() {
     console.log('startGame');
     // callback function
     // This function is responsible for starting and restarting the game.
+    // closeAnswerFeedback();
     renderQuestionAndAnswers();
     renderTotalQuestions();
     updateQuestionCounter();

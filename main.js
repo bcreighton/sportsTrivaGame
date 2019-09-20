@@ -90,22 +90,22 @@ const sportsQuestions = [
             id: cuid(),
             question: 'How many points did Kobe Bryant score in his final NBA game?',
             a1: {
-                a: 60, //correct
+                a: '60', //correct
                 correct: true
             },
             a2: {
-                a: 16,
+                a: '16',
                 correct: false
             },
             a3: {
-                a: 24,
+                a: '24',
                 correct: false
             },
             a4: {
-                a: 81,
+                a: '81',
                 correct: false
             }
-        },
+        }/*,
         {
             id: cuid(),
             question: 'What is the men\'s and women\'s world record in the 100m dash?',
@@ -130,19 +130,19 @@ const sportsQuestions = [
             id: cuid(),
             question: 'What\'s the world record for most medals won at a single Olympic Games by an individual?',
             a1: {
-                a: 8, // correct
+                a: '8', // correct
                 correct: true
             },
             a2: {
-                a: 6,
+                a: '6',
                 correct: false
             },
             a3: {
-                a: 9,
+                a: '9',
                 correct: false
             },
             a4: {
-                a: 2,
+                a: '2',
                 correct: false
             }
         },
@@ -225,12 +225,13 @@ const sportsQuestions = [
                 a: 'Germany',
                 correct: false
             }
-        }
+        } */
     ]
 
 // Question Tracking Array
 const totalQuestions = sportsQuestions.length;
 const choosenQuestionSet = [];
+const totalCorrectAnswers = [];
 
 // ----------------------------END OF DATA MODEL----------------------------------
 
@@ -287,13 +288,18 @@ function renderQuestionAndAnswers() {
         For one(1) random question in sportsQuestions, generate a string and h2
             The question should be rendered as inner text
     */
-   console.log('`renderQuestion` ran');
-   const currentQuestion = generateRandomQuestion(sportsQuestions);
-   const currentAnswers = generateAnswers(currentQuestion);
 
-    // insert question into the DOM
-   $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2><form><div class="answers js-answers"></div><button id="answerSubmit" type="submit">Submit Answer</button></form>`);
-   $('.js-answers').html(currentAnswers);
+    if(choosenQuestionSet.length == totalQuestions) {
+        finalScore();
+    } else {
+        console.log('`renderQuestion` ran');
+        const currentQuestion = generateRandomQuestion(sportsQuestions);
+        const currentAnswers = generateAnswers(currentQuestion);
+
+            // insert question into the DOM
+        $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2><form><div class="answers js-answers"></div><button id="answerSubmit" type="submit">Submit Answer</button></form>`);
+        $('.js-answers').html(currentAnswers);
+    }
 }
 
 function renderTotalQuestions() {
@@ -353,8 +359,8 @@ function answerSubmission() {
     // This function is responsible for handling the answer selection
     console.log('`answerSubmission` ran');
 
-    $('section').on('click', 'button', function(event) {
-        debugger;
+    $('section').on('click', '#answerSubmit', function(event) {
+        
         event.preventDefault();
 
         // validation that an answer has been selected.
@@ -382,18 +388,19 @@ function answerFeedback(result) {
     let answer = getCorrectAnswer()['answer'];
 
     let popup = '<div class="answerPopup"><div class="answerFeedback">';
+    
 
     if (result === true) {
-        /* popup += '<h1 class="answerFeedbackTitle">Great Job!!<p class="correctAnswer">You\'ve selected the correct answer.</p>';
-        popup += '</div></div>';
-        document.body.innerHTML += (popup);
-        $('.answerPopup').css('display','block'); */
+        popup += '<h1 class="answerFeedbackTitle">Great Job!!<p class="correctAnswer">You\'ve selected the correct answer.</p>';
+        popup += '<button class="nextQuestion">Next ></button></div></div>';
+        $('body').prepend(popup);
+        $('.answerPopup').css('display','block');
         console.log('answered question correctly.');
     } else {
-        /* popup += `<h1 class="answerFeedbackTitle">Incorrect!!<p class="correctAnswer">The correct answer to this question is: ${answer}</p>`;
-        popup += '</div></div>';
-        document.body.innerHTML += (popup);
-        $('.answerPopup').css('display','block'); */
+        popup += `<h1 class="answerFeedbackTitle">Incorrect!!<p class="correctAnswer">The correct answer to this question is: ${answer}</p>`;
+        popup += '<button class="nextQuestion">Next ></button></div></div>';
+        $('body').prepend(popup);
+        $('.answerPopup').css('display','block');
         console.log('answered question incorrectly.');
     }
 }
@@ -403,46 +410,59 @@ function answerChecker(answer) {
     // This will also result in a visual representation to show correct and incorrect answers
     console.log('`answerChecker` ran');
     let correctAnswer = getCorrectAnswer()['answer'];
-    let numQuestions = getCorrectAnswer()['length'];
+    let numQuestion = getCorrectAnswer()['length'];
+    
     
     if (answer === correctAnswer) {
-        $(`#js-q${numQuestions}`).addClass('correct');
+        $(`#js-q${numQuestion}`).addClass('correct');
+        totalCorrectAnswers.push(numQuestion);
         return true;
     } else {
-        $(`#js-q${numQuestions}`).addClass('incorrect');
+        $(`#js-q${numQuestion}`).addClass('incorrect');
         return false;
     }
 }
 
 function closeAnswerFeedback() {
-    $('body').on('mouseup', '.answerPopup', function(e) {
-
-        let container = $('.answerFeedback');
-
-        // if the target of the click isn't the container nor a descendant of the container
-        if (!container.is(e.target) && container.has(e.target).length === 0) 
-        {
+    $('body').on('click', '.nextQuestion', function() {
             $('.answerPopup').remove();
-        }
     });
 }
 
 function finalScore() {
     // This function is responsible for showing the user a pass/fail result
     // and their final score.
+    console.log('game over');
+    const numCorrect = totalCorrectAnswers.length;
 
+    if(numCorrect <= (Math.floor(totalQuestions * 0.6))) {
+        $('.questionContainer').html(`Unfortunely, you need to brush up on your sports knowledge. You finished with a score of ${numCorrect} out of ${totalQuestions} questions. Better luck next time!`);   
+    } else if (numCorrect == (Math.floor(totalQuestions * 0.7))) {
+        $('.questionContainer').html(`You\'re sports knowledge is fairly mediocre; but better than most. You finished with a score of ${numCorrect} out of ${totalQuestions} questions. Do better next time!`);  
+    } else {
+        $('.questionContainer').html(`You\'re amongst the G.O.A.T.s when it comes to your sports knowledge. Congratulations... You finished with a score of ${numCorrect} out of ${totalQuestions} questions!!`); 
+    }
+
+    $('.questionContainer').append('<button class="start">Start Over</button>');
+}
+
+function startGameClick() {
+    $('.questionContainer').on('click', '.start', function(event) {
+        startGame();
+    });
 }
 
 function startGame() {
     console.log('startGame');
     // callback function
     // This function is responsible for starting and restarting the game.
-    // closeAnswerFeedback();
     renderQuestionAndAnswers();
-    renderTotalQuestions();
-    updateQuestionCounter();
-    answerSubmission();
-    renderQuestionList();
+        renderTotalQuestions();
+        updateQuestionCounter();
+        answerSubmission();
+        renderQuestionList();
+    startGameClick();
+    closeAnswerFeedback();
     //answerSelection();
     //questionTracker();
     //finalScore();

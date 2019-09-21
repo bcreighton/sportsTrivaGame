@@ -76,9 +76,25 @@ function generateAnswers(question) {
 
     const answersObjArr = Object.entries(question);
     const answers = [];
-    for( let i=2; i<answersObjArr.length; i++){
-        answers.push(answersObjArr[i][1].a);
-    }
+    const randomTracker = [];
+    let rExists;
+    let random = 0;
+
+        for(let i = 2; i<answersObjArr.length;){
+
+            random = Math.floor(Math.random() * (5 - 2 + 1) + 2);
+            rExists = randomTracker.find(r => r == random);
+
+            if (rExists == random) {
+                random = Math.floor(Math.random() * (5 - 2 + 1) + 2);
+                rExists = randomTracker.find(r => r == random);
+            } else {
+                randomTracker.push(random);
+                answers.push(answersObjArr[random][1].a);
+                i++;
+            }
+        }
+
     const answersHTML = generateAnsHTML(answers);
     return answersHTML;
 }

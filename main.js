@@ -33,6 +33,7 @@ const totalCorrectAnswers = [];
 function startGame() {
     $('.start').on('click', function(event) {
         renderQuestionAndAnswers();
+        $('.questionTracker').css('display','block');
     });
 }
 
@@ -117,6 +118,8 @@ function renderQuestionAndAnswers() {
         $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2><form><div class="answers js-answers"></div><button id="answerSubmit" type="submit">Submit Answer</button></form>`);
         
         $('.js-answers').html(currentAnswers);
+
+        updateQuestionCounter();
     }
 }
 
@@ -193,7 +196,6 @@ function answerSubmission() {
             answerFeedback(gradeResult);
             
             renderQuestionAndAnswers();
-            updateQuestionCounter();
         }
     });
 }
@@ -262,6 +264,8 @@ function finalScore() {
     }
 
     $('.questionContainer').append('<button class="restart">Start Over</button>');
+
+    $('.questionTracker').css('display','none');
 }
 
 function restartGame() {
@@ -270,9 +274,9 @@ function restartGame() {
         choosenQuestionSet.length = 0;
         dataSet = sportsQuestions.slice();
         renderTotalQuestions();
-        updateQuestionCounter();
         renderQuestionList();
         renderQuestionAndAnswers();
+        $('.questionTracker').css('display','block');
     });
 }
 
@@ -281,7 +285,6 @@ function handleSportsGame() {
     // callback function
     // This function is responsible for starting and restarting the game.
     renderTotalQuestions();
-    updateQuestionCounter();
     renderQuestionList();
     startGame();
     answerSubmission();

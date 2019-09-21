@@ -24,216 +24,17 @@
         No navigation of quesitons!!!
 */
 
-// Question set (data model)
-const sportsQuestions = [
-        {
-            id: cuid(),
-            question: 'Who\'s the Greatest Basketball Player of All Time?',
-            a1: {
-                a: 'Michael Jordan', //correct
-                correct: true
-            },
-            a2: {
-                a: 'Kareem Abdul-Jabar',
-                correct: false
-            },
-            a3: {
-                a: 'Bill Russel',
-                correct: false
-            },
-            a4: {
-                a: 'Lebron James',
-                correct: false
-            }
-        },
-        {
-            id: cuid(),
-            question: 'Who holds the career record for most interceptions thrown?',
-            a1: {
-                a: 'Brett Farve', //correct
-                correct: true
-            },
-            a2: {
-                a: 'Payton Manning',
-                correct: false
-            },
-            a3: {
-                a: 'Dan Marino',
-                correct: false
-            },
-            a4: {
-                a: 'Tom Brady',
-                correct: false
-            }
-        },
-        {
-            id: cuid(),
-            question: 'How many yards did the NFLs leading rusher amass during their career?',
-            a1: {
-                a: '18,355', //correct
-                correct: true
-            },
-            a2: {
-                a: '14,748',
-                correct: false
-            },
-            a3: {
-                a: '21,781',
-                correct: false
-            },
-            a4: {
-                a: '17,913',
-                correct: false
-            }
-        },
-        {
-            id: cuid(),
-            question: 'How many points did Kobe Bryant score in his final NBA game?',
-            a1: {
-                a: '60', //correct
-                correct: true
-            },
-            a2: {
-                a: '16',
-                correct: false
-            },
-            a3: {
-                a: '24',
-                correct: false
-            },
-            a4: {
-                a: '81',
-                correct: false
-            }
-        }/*,
-        {
-            id: cuid(),
-            question: 'What is the men\'s and women\'s world record in the 100m dash?',
-            a1: {
-                a: '9.58s / 10.49s', // correct
-                correct: true
-            },
-            a2: {
-                a: '8.97s / 10.78s',
-                correct: false
-            },
-            a3: {
-                a: '9.45s / 9.97s',
-                correct: false
-            },
-            a4: {
-                a: '10.49s / 11.32s', 
-                correct: false
-            }
-        },
-        {
-            id: cuid(),
-            question: 'What\'s the world record for most medals won at a single Olympic Games by an individual?',
-            a1: {
-                a: '8', // correct
-                correct: true
-            },
-            a2: {
-                a: '6',
-                correct: false
-            },
-            a3: {
-                a: '9',
-                correct: false
-            },
-            a4: {
-                a: '2',
-                correct: false
-            }
-        },
-        {
-            id: cuid(),
-            question: 'How long was the longest tennis match in history?',
-            a1: {
-                a: '11 hours and 5 minutes', //correct
-                correct: true
-            },
-            a2: {
-                a: '5 hours and 28 minutes',
-                correct: false
-            },
-            a3: {
-                a: '13 hours and 47 minutes',
-                correct: false
-            },
-            a4: {
-                a: '3 hours and 18 minutes',
-                correct: false
-            }
-        },
-        {
-            id: cuid(),
-            question: 'Which is the only American Football team to go a whole season undefeated, including the Super Bowl?',
-            a1: {
-                a: '1972, Miami Dolphins', //correct
-                correct: true
-            },
-            a2: {
-                a: '1985, Chicago Bears',
-                correct: false
-            },
-            a3: {
-                a: '2007, New England Patriots',
-                correct: false
-            },
-            a4: {
-                a: '1973, Miami Dolphins',
-                correct: false
-            }
-        },
-        {
-            id: cuid(),
-            question: 'How is soccer player Edson Arantes do Nascimento better known?',
-            a1: {
-                a: 'Pele', //correct
-                correct: true
-            },
-            a2: {
-                a: 'Ronaldinho',
-                correct: false
-            },
-            a3: {
-                a: 'Garrincha',
-                correct: false
-            },
-            a4: {
-                a: 'Neymar',
-                correct: false
-            }
-        },
-        {
-            id: cuid(),
-            question: 'Which country won the first ever soccer World Cup in 1930?',
-            a1: {
-                a: 'Uruguay', //correct
-                correct: true
-            },
-            a2: {
-                a: 'United States',
-                correct: false
-            },
-            a3: {
-                a: 'Mexico',
-                correct: false
-            },
-            a4: {
-                a: 'Germany',
-                correct: false
-            }
-        } */
-    ]
-
 // Question Tracking Array
-const totalQuestions = sportsQuestions.length;
+let dataSet = sportsQuestions.slice();
+const totalQuestions = dataSet.length;
 const choosenQuestionSet = [];
 const totalCorrectAnswers = [];
 
-// ----------------------------END OF DATA MODEL----------------------------------
+function startGame() {
+    $('.start').on('click', function(event) {
+        renderQuestionAndAnswers();
+    });
+}
 
 function generateRandomQuestion(questions) {
     /* pseudocode ----
@@ -285,7 +86,7 @@ function generateAnswers(question) {
 function renderQuestionAndAnswers() {
     // This function is repsonsible for rendering one(1) question to the DOM
     /* pseudocode-----
-        For one(1) random question in sportsQuestions, generate a string and h2
+        For one(1) random question in dataSet, generate a string and h2
             The question should be rendered as inner text
     */
 
@@ -293,11 +94,12 @@ function renderQuestionAndAnswers() {
         finalScore();
     } else {
         console.log('`renderQuestion` ran');
-        const currentQuestion = generateRandomQuestion(sportsQuestions);
+        const currentQuestion = generateRandomQuestion(dataSet);
         const currentAnswers = generateAnswers(currentQuestion);
 
             // insert question into the DOM
         $('.js-questionContainer').html(`<h2>${currentQuestion.question}</h2><form><div class="answers js-answers"></div><button id="answerSubmit" type="submit">Submit Answer</button></form>`);
+        
         $('.js-answers').html(currentAnswers);
     }
 }
@@ -443,30 +245,33 @@ function finalScore() {
         $('.questionContainer').html(`You\'re amongst the G.O.A.T.s when it comes to your sports knowledge. Congratulations... You finished with a score of ${numCorrect} out of ${totalQuestions} questions!!`); 
     }
 
-    $('.questionContainer').append('<button class="start">Start Over</button>');
+    $('.questionContainer').append('<button class="restart">Start Over</button>');
 }
 
-function startGameClick() {
-    $('.questionContainer').on('click', '.start', function(event) {
-        startGame();
+function restartGame() {
+    $('.questionContainer').on('click', '.restart', function(event) {
+        dataSet = [];
+        choosenQuestionSet.length = 0;
+        dataSet = sportsQuestions.slice();
+        renderTotalQuestions();
+        updateQuestionCounter();
+        renderQuestionList();
+        renderQuestionAndAnswers();
     });
 }
 
-function startGame() {
+function handleSportsGame() {
     console.log('startGame');
     // callback function
     // This function is responsible for starting and restarting the game.
-    renderQuestionAndAnswers();
-        renderTotalQuestions();
-        updateQuestionCounter();
-        answerSubmission();
-        renderQuestionList();
-    startGameClick();
+    renderTotalQuestions();
+    updateQuestionCounter();
+    renderQuestionList();
+    startGame();
+    answerSubmission();
     closeAnswerFeedback();
-    //answerSelection();
-    //questionTracker();
-    //finalScore();
+    restartGame();
 }
 
 // when the page loads call startGame
-$(startGame);
+$(handleSportsGame);

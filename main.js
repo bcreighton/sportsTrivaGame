@@ -195,7 +195,7 @@ function answerSubmission() {
             
             answerFeedback(gradeResult);
             
-            renderQuestionAndAnswers();
+            //renderQuestionAndAnswers();
         }
     });
 }
@@ -246,6 +246,7 @@ function answerChecker(answer) {
 function closeAnswerFeedback() {
     $('body').on('click', '.nextQuestion', function() {
             $('.answerPopup').remove();
+            renderQuestionAndAnswers();
     });
 }
 

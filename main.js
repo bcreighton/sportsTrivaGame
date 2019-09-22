@@ -64,7 +64,7 @@ function generateRandomQuestion(questions) {
 function generateAnsHTML(answers) {
     console.log('Answer HTML has been generated.');
     for(let i=0; i<answers.length; i++) {
-        answers[i] = `<input type="radio" id="${answers[i]}" name="answers" value="${answers[i]}">\r<label for="${answers[i]}">${answers[i]}</label>`;
+        answers[i] = `<div class="answerBlock"><input type="radio" id="${answers[i]}" name="answers" value="${answers[i]}">\r<label for="${answers[i]}">${answers[i]}</label></div>`;
     }
     answers = answers.join('');
     return answers;
@@ -235,10 +235,13 @@ function answerChecker(answer) {
     
     if (answer === correctAnswer) {
         $(`#js-q${numQuestion}`).addClass('correct');
+        $(`#js-q${numQuestion}`).append('<span class="correctIcon"></span>');
+
         totalCorrectAnswers.push(numQuestion);
         return true;
     } else {
         $(`#js-q${numQuestion}`).addClass('incorrect');
+        $(`#js-q${numQuestion}`).append('<span class="incorrectIcon"></span>');
         return false;
     }
 }

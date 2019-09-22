@@ -2,16 +2,32 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: black;
+    background-image: url(images/trivaBackground.jpg);
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: white;
+}
+
 h1 {
-    font-size: 2rem;
+    font-size: 4rem;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
 }
 
 h3 {
-    font-size: 1.4rem;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.75rem;
 }
 
 div {
@@ -25,7 +41,15 @@ header {
     padding: 30px 0;
     width: 100%;
     height: 15vh;
-    background-color: gray;
+    /* background-color: gray; */
+}
+
+header, .container, footer {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.brand h1 {
+    color: white;
 }
 
 .container {
@@ -38,30 +62,53 @@ header {
 
 .questionTracker {
     flex: 1;
-    background-color: darkgray;
+    /* background-color: darkgray; */
     padding: 40px 0;
     display: none;
+    color: white;
+}
+
+.questionList {
+    padding: 20px 0;
+}
+
+.questionListItem {
+    padding: 10px 0;
 }
 
 .questionContainer {
     flex: 3;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     text-align: center;
-    padding: 40px 0;
+    padding: 40px;
 }
 
 .questionContainer p {
     display: inline-block;
+    text-align: center;
     width: 40%;
-    font-size: 1.3rem;
-    margin-top: 40px;
+    margin-top: 40px ;
 }
 
-.startBTN, .playAgainBTN {
-    background-color: gray;
-    padding: 20px 0;
-    margin: 100px 0;
-    font-size: 1.4rem;
+.start, .restart {
+    /* background-color: gray; */
+    padding: 10px 30px;
+    margin: 75px auto;
+    font-size: 2.5rem;
+    display: block;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: 2px solid rgb(155, 0, 0);
+    background-color: white;
+    color: rgb(155, 0, 0);
+    cursor: pointer;
+}
+
+.questionListItem {
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 25px;
 }
 
 .questionScore {
@@ -75,11 +122,11 @@ header {
 }
 
 .questionScore:nth-child(odd){
-    background-color: lightgray;
+    /* background-color: lightgray; */
 }
 
 .questionScore:nth-child(even) {
-    background-color: gray;
+    /* background-color: gray; */
 }
 
 .answerOption {
@@ -94,33 +141,59 @@ header {
 }
 
 .answerOption:nth-child(odd) {
-    background-color: darkgray;
+    /* background-color: darkgray; */
 }
 
 .answerOption:nth-child(even) {
-    background-color: gray;
+    /* background-color: gray; */
 }
 
 .submit {
     width: 40%;
     font-size: 1.2rem;
     padding: 10px 20px;
-    background-color: gray;
+    /* background-color: gray; */
 }
 
 footer {
     height: 5vh;
-    background-color: darkgray;
     padding-top: 10px;
+    color: white;
 }
 
 /* answer feedback */
 .correct {
-    background-color: green;
+    color: #0B9900;
 }
 
 .incorrect {
-    background-color: red;
+    color: #8B1600;
+}
+
+.correctIcon {
+    position: relative;
+    background-image: url('images/correctIcon.png');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 30px;
+    right: 0px;
+    z-index: 1000;
+    display: inline-block;
+}
+
+.incorrectIcon {
+    position: relative;
+    background-image: url('images/incorrectIcon.png');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 30px;
+    right: 0px;
+    z-index: 1000;
+    display: inline-block;
 }
 
 .answerPopup {
@@ -139,7 +212,7 @@ footer {
     left:50%;
     margin-left:-200px;
     width: 400px;
-    height:250px;
+    height: 250px;
     background-color:#111;
     padding:5px;
     border-radius:4px;

@@ -60,6 +60,12 @@ header, .container, footer {
     padding: 0 20px;
 }
 
+.widthContainer {
+    height: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
 .questionTracker {
     flex: 1;
     /* background-color: darkgray; */
@@ -90,7 +96,7 @@ header, .container, footer {
     margin-top: 40px ;
 }
 
-.start, .restart {
+.start, .restart, .nextQuestion, .nextQuestionCorrect {
     /* background-color: gray; */
     padding: 10px 30px;
     margin: 75px auto;
@@ -103,6 +109,15 @@ header, .container, footer {
     background-color: white;
     color: rgb(155, 0, 0);
     cursor: pointer;
+}
+
+.nextQuestion {
+    margin: 20px auto;
+}
+
+.nextQuestionCorrect {
+    border: 2px solid rgb(0, 141, 19);
+    color: rgb(0, 141, 19);
 }
 
 .questionListItem {
@@ -121,12 +136,36 @@ header, .container, footer {
     margin-top: 10px;
 }
 
-.questionScore:nth-child(odd){
-    /* background-color: lightgray; */
+.answers {
+    margin: 20px auto;
+    padding: 0 60px;
+    text-align: center;
 }
 
-.questionScore:nth-child(even) {
-    /* background-color: gray; */
+.answerBlock {
+    display: block;
+    color: black;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 15px auto;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.answerBlock:hover {
+    background-color: rgb(93, 255, 93);
+}
+
+.answerBlock input[type="radio"]{
+    display: none;
+}
+
+.answerBlockSelected {
+    background-color: rgb(255, 153, 0);
+    color: white;
 }
 
 .answerOption {
@@ -148,11 +187,19 @@ header, .container, footer {
     /* background-color: gray; */
 }
 
-.submit {
-    width: 40%;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    /* background-color: gray; */
+#answerSubmit {
+    width: 60%;
+    padding: 10px 30px;
+    margin: 30px auto;
+    font-size: 1.5rem;
+    display: block;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: 2px solid white;
+    background-color: rgb(0, 141, 19);
+    color: white;
+    cursor: pointer;
 }
 
 footer {
@@ -179,7 +226,7 @@ footer {
     top: 2px;
     left: 30px;
     right: 0px;
-    z-index: 1000;
+    z-index: 999;
     display: inline-block;
 }
 
@@ -192,7 +239,7 @@ footer {
     top: 2px;
     left: 30px;
     right: 0px;
-    z-index: 1000;
+    z-index: 999;
     display: inline-block;
 }
 
@@ -214,16 +261,19 @@ footer {
     width: 400px;
     height: 250px;
     background-color:#111;
-    padding:5px;
+    padding:30px;
     border-radius:4px;
     color:#FFF;
 }
 
-.nextQuestion {
-    margin: 0 auto;
-    width: 200px;
-    height: 50px;
-    padding: 5px;
-    background-color: gray;
-    color: black;
+.answerFeedbackCorrect {
+    color: rgb(0, 141, 19);
+}
+
+.answerFeedbackIncorrect {
+    color: rgb(199, 0, 0);
+}
+
+.answerFeedback .correctAnswer {
+    margin: 20px 30px;
 }

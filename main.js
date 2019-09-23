@@ -139,22 +139,31 @@ function updateQuestionCounter() {
 
 function questionListHTML() {
     const questionListItems = [];
+    const questionListItemsMobile = [];
     for(let i = 1; i <= totalQuestions; i++) {
         questionListItems.push(`<li id="js-q${i}" class="questionListItem">Question ${i}</li>`);
+        questionListItemsMobile.push(`<li id="js-q${i}" class="questionListItem mobile">${i}</li>`);
     }
     const questionListItemsString = questionListItems.join('');
+    const questionListItemsMobileString = questionListItemsMobile.join('');
     
     const questionListString = `<ul class='questionList'>${questionListItemsString}</ul>\r`;
+    const questionListMobileString = `<ul class='questionList mobile'>${questionListItemsMobileString}</ul>\r`;
     
-    return questionListString;
+    return {
+        questionListString, 
+        questionListMobileString
+    };
 }
 
 function renderQuestionList() {
     // This function is responsible for rendering the total question in a list format for score tracking.
     console.log('`renderQuestionList` ran');
-    const questionListStringHTML = questionListHTML();
+    const questionListStringHTML = questionListHTML().questionListString;
+    const questionListMobileStringHTML = questionListHTML().questionListMobileString;
 
     $('.js-questionTracker').append(questionListStringHTML);
+    $('.js-questionTracker').append(questionListMobileStringHTML);
 }
 
 function getCorrectAnswer() {

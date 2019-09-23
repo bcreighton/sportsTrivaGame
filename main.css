@@ -44,12 +44,21 @@ header {
     /* background-color: gray; */
 }
 
-header, .container, footer {
+/* header, .container, footer {
     background-color: rgba(0, 0, 0, 0.4);
-}
+} */
 
 .brand h1 {
     color: white;
+}
+
+.appBG {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: -1;
 }
 
 .container {
@@ -58,12 +67,6 @@ header, .container, footer {
     height: 80vh;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.widthContainer {
-    height: auto;
-    width: 100%;
-    max-width: 1200px;
 }
 
 .questionTracker {
@@ -161,6 +164,12 @@ header, .container, footer {
 
 .answerBlock input[type="radio"]{
     display: none;
+}
+
+.answerBlock input:focus-visible {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .answerBlockSelected {

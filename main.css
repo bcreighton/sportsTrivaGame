@@ -44,10 +44,6 @@ header {
     /* background-color: gray; */
 }
 
-/* header, .container, footer {
-    background-color: rgba(0, 0, 0, 0.4);
-} */
-
 .brand h1 {
     color: white;
 }
@@ -96,32 +92,42 @@ header {
 .questionContainer p {
     display: inline-block;
     text-align: center;
-    width: 40%;
+    width: 60%;
     margin-top: 40px ;
 }
 
-.start, .restart, .nextQuestion, .nextQuestionCorrect {
+.start, .restart {
     /* background-color: gray; */
     padding: 10px 30px;
-    margin: 75px auto;
-    font-size: 2.5rem;
+    margin: 60px auto;
+    font-size: 2rem;
     display: block;
     border-radius: 10px;
     text-transform: uppercase;
     font-weight: bolder;
-    border: 2px solid rgb(155, 0, 0);
-    background-color: white;
-    color: rgb(155, 0, 0);
+    border: 2px solid #8B1600;
+    background-color: black;
+    color: white;
     cursor: pointer;
 }
 
 .nextQuestion {
-    margin: 20px auto;
+    width: 150px;
+    padding: 10px 30px;
+    margin: 30px auto;
+    font-size: 1.5rem;
+    display: block;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: 2px solid white;
+    background-color: #0B9900;
+    color: white;
+    cursor: pointer;
 }
 
-.nextQuestionCorrect {
-    border: 2px solid rgb(0, 141, 19);
-    color: rgb(0, 141, 19);
+.nextQuestionIncorrect {
+    background-color: #8B1600;
 }
 
 .questionListItem {
@@ -200,7 +206,7 @@ header {
 }
 
 #answerSubmit {
-    width: 60%;
+    width: 250px;
     padding: 10px 30px;
     margin: 30px auto;
     font-size: 1.5rem;
@@ -209,7 +215,7 @@ header {
     text-transform: uppercase;
     font-weight: bolder;
     border: 2px solid white;
-    background-color: rgb(0, 141, 19);
+    background-color: #0B9900;;
     color: white;
     cursor: pointer;
 }
@@ -255,27 +261,10 @@ footer {
     display: inline-block;
 }
 
-.answerPopup {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:1000;
-    background-color: rgba(0, 0, 0, 0.8);
-    display:none;
-}
 .answerFeedback {
-    position:absolute;
-    top:30%;
-    left:50%;
-    margin-left:-200px;
-    width: 400px;
-    height: 250px;
-    background-color:#111;
-    padding:30px;
-    border-radius:4px;
-    color:#FFF;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .answerFeedbackCorrect {
@@ -283,9 +272,15 @@ footer {
 }
 
 .answerFeedbackIncorrect {
-    color: rgb(199, 0, 0);
+    color: #8B1600;
 }
 
 .answerFeedback .correctAnswer {
     margin: 20px 30px;
+}
+
+.finalMessage {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
 }

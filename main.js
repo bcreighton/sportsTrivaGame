@@ -222,21 +222,17 @@ function answerFeedback(result) {
     
     let answer = getCorrectAnswer()['answer'];
 
-    let popup = '<div class="answerPopup"><div class="answerFeedback">';
+    let feedback = '<div class="answerFeedback">';
     
 
     if (result === true) {
-        popup += '<h1 class="answerFeedbackCorrect">Great Job!!</h1><p class="correctAnswer">You\'ve selected the correct answer.</p>';
-        popup += '<button class="nextQuestion nextQuestionCorrect">Next ></button></div></div>';
-        $('body').prepend(popup);
-        $('.answerPopup').css('display','block');
-        console.log('answered question correctly.');
+        feedback += '<h1 class="answerFeedbackCorrect">Great Job!!</h1><p class="correctAnswer">You\'ve selected the correct answer.</p>';
+        feedback += '<button class="nextQuestion">Next ></button></div>';
+        $('.js-questionContainer').html(feedback);
     } else {
-        popup += `<h1 class="answerFeedbackIncorrect">Incorrect!!</h1><p class="correctAnswer">The correct answer to this question is: ${answer}</p>`;
-        popup += '<button class="nextQuestion">Next ></button></div></div>';
-        $('body').prepend(popup);
-        $('.answerPopup').css('display','block');
-        console.log('answered question incorrectly.');
+        feedback += `<h1 class="answerFeedbackIncorrect">Incorrect!!</h1><p class="correctAnswer">The correct answer to this question is: ${answer}</p>`;
+        feedback += '<button class="nextQuestion nextQuestionIncorrect">Next ></button></div>';
+        $('.js-questionContainer').html(feedback);
     }
 }
 
@@ -275,11 +271,11 @@ function finalScore() {
     const numCorrect = totalCorrectAnswers.length;
 
     if(numCorrect <= (Math.floor(totalQuestions * 0.6))) {
-        $('.questionContainer').html(`<h2>Unfortunely, you need to brush up on your sports knowledge. You finished with a score of ${numCorrect} out of ${totalQuestions} questions. Better luck next time!</h2>`);   
+        $('.questionContainer').html(`<h2 class="finalMessage">Unfortunely, you need to brush up on your sports knowledge. You finished with a score of ${numCorrect} out of ${totalQuestions} questions. Better luck next time!</h2>`);   
     } else if (numCorrect == (Math.floor(totalQuestions * 0.7))) {
-        $('.questionContainer').html(`<h2>You\'re sports knowledge is fairly mediocre; but better than most. You finished with a score of ${numCorrect} out of ${totalQuestions} questions. Do better next time!</h2>`);  
+        $('.questionContainer').html(`<h2 class="finalMessage">You\'re sports knowledge is fairly mediocre; but better than most. You finished with a score of ${numCorrect} out of ${totalQuestions} questions. Do better next time!</h2>`);  
     } else {
-        $('.questionContainer').html(`<h2>You\'re amongst the G.O.A.T.s when it comes to your sports knowledge. Congratulations... You finished with a score of ${numCorrect} out of ${totalQuestions} questions!!</h2>`); 
+        $('.questionContainer').html(`<h2 class="finalMessage">You\'re amongst the G.O.A.T.s when it comes to your sports knowledge. Congratulations... You finished with a score of ${numCorrect} out of ${totalQuestions} questions!!</h2>`); 
     }
 
     $('.questionContainer').append('<button class="restart">Start Over</button>');

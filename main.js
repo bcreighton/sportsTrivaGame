@@ -256,15 +256,14 @@ function answerChecker(answer) {
     if (answer === correctAnswer) {
         $(`#js-q${numQuestion}`).addClass('correct');
         $(`#js-q${numQuestion}`).append('<span class="correctIcon"></span>');
-        debugger;
-        $(`#js-q${numQuestion}`).find('.questionListItem.mobile').addClass('correctMobile');
+        $(`#js-q${numQuestion}.questionListItem.mobile`).addClass('correctMobile');
 
         totalCorrectAnswers.push(numQuestion);
         return true;
     } else {
         $(`#js-q${numQuestion}`).addClass('incorrect');
         $(`#js-q${numQuestion}`).append('<span class="incorrectIcon"></span>');
-        $(`#js-q${numQuestion}`).find('.questionListItem.mobile').addClass('incorrectMobile');
+        $(`#js-q${numQuestion}.questionListItem.mobile`).addClass('incorrectMobile');
         return false;
     }
 }

@@ -7,6 +7,9 @@ body {
     background-color: black;
     background-image: url(images/trivaBackground.jpg);
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -382,6 +385,10 @@ footer {
 }
 
 @media screen and (max-width: 760px) {
+    body {
+        background-image: url(images/trivaBackgroundMobile.png);
+    }
+
     .brand h1 {
         font-size: 3.5rem;
     }

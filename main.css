@@ -203,7 +203,7 @@ header {
 
 #answerSubmit {
     width: 250px;
-    padding: 10px 30px;
+    padding: 10px 20px;
     margin: 30px auto;
     font-size: 1.5rem;
     display: block;
@@ -346,7 +346,18 @@ footer {
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 760px) {
+    body {
+        background-image: url(images/trivaBackgroundMobile.png);
+    }
+
+    .brand h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
 
     h3 {
         font-size: 2.5rem;
@@ -375,7 +386,7 @@ footer {
     }
 
     .questionListItem {
-        padding: 10px 8px;
+        padding: 6px;
         width: 40px;
         height: 40px;
         text-align: center;
@@ -389,19 +400,10 @@ footer {
     ul.mobile {
         display: flex;
         flex-direction: row;
-    }
-}
-
-@media screen and (max-width: 760px) {
-    body {
-        background-image: url(images/trivaBackgroundMobile.png);
+        justify-content: center;
     }
 
-    .brand h1 {
-        font-size: 3.5rem;
-    }
-
-    h2 {
-        font-size: 2rem;
+    #answerSubmit {
+        font-size: 1.25rem;
     }
 }
